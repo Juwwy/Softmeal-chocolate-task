@@ -69,11 +69,12 @@
                                         <form>
                                                 <h3>Place your order here</h3>
                                                 <label for="name" >Full name</label>
-                                                <input type="name" class="form-control" id="name" placeholder="Full name" required autofocus>
+                                                <input type="text" class="form-control" id="name" placeholder="Full name" required autofocus
+                                                onkeydown="changeUi(this.id)" onmouseover="revert(this.id)">
                                                 <label for="email" >Email</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Email@" required>
+                                                <input type="email" class="form-control" id="email" placeholder="Email@" required onkeydown="changeUi(this.id)" onmouseover="revert(this.id)">
                                                 <label for="tel" >Telephone</label>
-                                                <input type="tel" class="form-control" id="tel" placeholder="Telephone " required>
+                                                <input type="tel" class="form-control" id="tel" placeholder="Telephone " required onkeydown="changeUi(this.id)" onmouseover="revert(this.id)">
                                                 <br>
                                                 <h3>Select your order items</h3>
                                                 <label for="food">Food</label>
@@ -113,7 +114,7 @@
                                                 </select><br>
                         
                                                 <label for="location">Location</label>
-                                                <textarea class="form-control"></textarea><br>
+                                                <textarea class="form-control" onkeydown="changeUi(this.id)" onmouseover="revert(this.id)"></textarea><br>
                         
                                                 <button class="btn btn-block btn-success">Make Order</button>
                                             </form>
@@ -129,7 +130,7 @@
 
         <footer>
                 <div class="container">
-                  <div class="row text-center ">
+                  <div class="row text-center head">
                     <div class="col-md-12 mt-4 mb-2">
                       <h1><i class="fas fa-utensils"></i> Soft Meals Chocolate and Coffe Shop</h1>
                     </div>
@@ -155,5 +156,18 @@
 
     <script src="js/jquery.min.js" ></script>
     <script src="js/bootstrap.min.js" ></script>
+    <script>
+    function changeUi(myColor){
+    document.getElementById(myColor).style.backgroundColor = "pink";
+    document.getElementById(myColor).style.color = "black";
+}
+
+function revert(myPrev){
+    document.getElementById(myPrev).style.backgroundColor = "white";
+    document.getElementById(myPrev).style.color = "black";
+}
+
+    
+    </script>
 </body>
 </html>
